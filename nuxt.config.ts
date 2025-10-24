@@ -4,7 +4,9 @@ import { defineNuxtConfig } from 'nuxt/config'
 export default defineNuxtConfig({
   vite: {
     // 启用现代构建模式
-    build: { target: 'es2022' }
+    build: {
+      target: 'esnext',
+    },
   },
   typescript: {
     // 强化类型检查
@@ -47,7 +49,7 @@ export default defineNuxtConfig({
   ],
   // UnoCSS 配置
   unocss: {
-    configFile: './uno.config.ts'
+    configFile: 'uno.config.ts'
   },
   // SEO 相关配置
   site: {

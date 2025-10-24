@@ -28,6 +28,12 @@ export default defineConfig({
         ['section', 'py-12 md:py-16 lg:py-20'],
     ],
     theme: {
+        fontFamily: {
+            // 全局字体名称
+            jiangcheng: ['JiangCheng'],
+            // 签名字体名称
+            signature: ['AlineSignature']
+        },
         breakpoints: {
             sm: '640px',
             md: '768px',
@@ -36,4 +42,20 @@ export default defineConfig({
             '2xl': '1536px',
         }
     },
+    preflights: [
+        {
+            getCSS: () => `
+                    @font-face {
+                      font-family: 'JiangCheng';
+                      src: url('/static/font/jiangcheng300W.TTF') format('truetype');
+                      font-display: swap;
+                    }
+                    @font-face {
+                      font-family: 'AlineSignature';
+                      src: url('/static/font/ALINE_SIGNATURE.TTF') format('truetype');
+                      font-display: swap;
+                    }
+                  `
+        }
+    ],
 })

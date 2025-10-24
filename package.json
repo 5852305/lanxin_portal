@@ -12,7 +12,7 @@
   "dependencies": {
     "@nuxt/image": "1.11.0",
     "@nuxt/test-utils": "3.19.2",
-    "@nuxt/ui": "4.0.1",
+    "@nuxt/ui": "^4.1.0",
     "@nuxtjs/device": "^3.2.4",
     "@nuxtjs/robots": "^5.5.6",
     "@unhead/vue": "^2.0.19",
@@ -38,6 +38,7 @@
     "@unocss/transformer-variant-group": "^66.5.4",
     "@vueuse/nuxt": "^14.0.0",
     "npm-audit": "^0.0.3",
+    "sass": "^1.93.2",
     "vite": "^7.1.11",
     "vue-tsc": "^3.1.1"
   }
