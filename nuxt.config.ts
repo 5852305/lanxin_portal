@@ -38,10 +38,10 @@ export default defineNuxtConfig({
   plugins: [
   ],
   modules: [
-    '@nuxtjs/device',
+    // '@nuxtjs/device',
     '@unocss/nuxt',
-    '@vueuse/nuxt',
-    '@pinia/nuxt',
+    // '@vueuse/nuxt',
+    // '@pinia/nuxt',
     '@nuxtjs/color-mode',
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
