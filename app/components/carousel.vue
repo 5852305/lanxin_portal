@@ -35,10 +35,10 @@
       <button
           v-for="(_, index) in images"
           :key="index"
-          class="w-2 h-2 rounded-full transition-all"
+          class="w-2 h-2  transition-all"
           :class="{
-          'bg-white': currentIndex === index,
-          'bg-white/50': currentIndex !== index
+          'bg-white w-4 rounded-4': currentIndex === index,
+          'bg-white/50 rounded-full': currentIndex !== index,
         }"
           @click="goToSlide(index)"
       />

@@ -4,7 +4,7 @@
     <header class="bg-#8C5C4E text-white p-1 sticky top-0 z-50">
       <div class="container mx-auto flex justify-between items-center">
         <NuxtLink to="/" class="text-xl font-bold">
-          <img src="/default_white_only_font_logo.png" alt="logo" style="width: 40px;height: 16px;"/>
+          <img src="/default_white_only_font_logo.png" alt="logo" style="width: 60px;height: 24px;"/>
         </NuxtLink>
 
         <!-- PC端导航（默认隐藏移动端） -->
