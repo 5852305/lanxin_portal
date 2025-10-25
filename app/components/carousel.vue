@@ -35,7 +35,7 @@
       <button
           v-for="(_, index) in images"
           :key="index"
-          class="w-2 h-2  transition-all"
+          class="w-2 h-1  transition-all"
           :class="{
           'bg-white w-4 rounded-4': currentIndex === index,
           'bg-white/50 rounded-full': currentIndex !== index,

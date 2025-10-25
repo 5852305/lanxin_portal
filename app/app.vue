@@ -1,7 +1,10 @@
 <template>
-    <NuxtLayout>
+    <NuxtLayout :if-show-footer="false">
       <NuxtRouteAnnouncer />
       <NuxtPage class="font-jiangcheng"/>
+      <template v-slot:header>
+        <AppHeader class="font-jiangcheng"/>
+      </template>
     </NuxtLayout>
 </template>
 <script setup lang="ts">
