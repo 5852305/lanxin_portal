@@ -38,7 +38,7 @@ export default defineNuxtConfig({
   plugins: [
   ],
   modules: [
-    // '@nuxtjs/device',
+    '@nuxtjs/device',
     '@unocss/nuxt',
     // '@vueuse/nuxt',
     // '@pinia/nuxt',
