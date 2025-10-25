@@ -59,28 +59,33 @@
 <script setup lang="ts">
 
 const handleHotspotClick = (area: string) => {
-  console.log(' 点击热点区域:', area)
+  // console.log(' 点击热点区域:', area)
   // 这里添加具体的点击处理逻辑
   switch(area) {
     case 'top-center':
       // 顶部功能处理
-      console.log('生理健康')
+      // console.log('生理健康')
+      navigateTo('/five-one/physiological-health')
       break
     case 'vertical-left':
       // 垂直左侧处理
-      console.log('关系健康')
+      // console.log('关系健康')
+      navigateTo('/five-one/relationship-health')
       break
     case 'vertical-right':
       // 垂直左侧处理
-      console.log('心里健康')
+      // console.log('心里健康')
+      navigateTo('/five-one/mental-health')
       break
     case 'bottom-left':
       // 垂直左侧处理
-      console.log('行为健康')
+      // console.log('行为健康')
+      navigateTo('/five-one/behavioral-health')
       break
     case 'bottom-right':
       // 垂直左侧处理
-      console.log('感知健康')
+      // console.log('感知健康')
+      navigateTo('/five-one/perceived-health')
       break
       // 其他区域处理...
   }

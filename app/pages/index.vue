@@ -5,7 +5,7 @@
     </div>
     <div class="home-main pl-5 pr-5">
       <HomeFiveOne class="mt-5"/>
-      <HomeContent class="mt-5"/>
+      <HomeContent class="mt-10"/>
       <HomeOfflineStore class="mt-10"/>
     </div>
     <HomeBottomInfo class="mt-10"/>
