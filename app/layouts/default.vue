@@ -1,10 +1,10 @@
 <template>
-  <div class="min-h-screen flex flex-col bg-#F7F0EA">
+  <div class="min-h-screen min-w-screen flex flex-col bg-#F7F0EA">
     <!-- Header -->
-    <header class="bg-#8C5C4E text-white p-4 sticky top-0 z-50">
+    <header class="bg-#8C5C4E text-white p-1 sticky top-0 z-50">
       <div class="container mx-auto flex justify-between items-center">
         <NuxtLink to="/" class="text-xl font-bold">
-          <img src="/default_white_logo.png" alt="logo" style="width: 80px;height: 77px;"/>
+          <img src="/default_white_only_font_logo.png" alt="logo" style="width: 40px;height: 16px;"/>
         </NuxtLink>
 
         <!-- PC端导航（默认隐藏移动端） -->
@@ -13,7 +13,7 @@
         </nav>
 
         <!-- 移动端汉堡按钮 -->
-        <button class="md:hidden text-2xl focus:outline-none" @click="toggleMenu">
+        <button class="md:hidden text-1xl focus:outline-none" @click="toggleMenu">
           ☰
         </button>
       </div>

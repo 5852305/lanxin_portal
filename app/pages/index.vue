@@ -1,11 +1,11 @@
 <template>
   <div class="home-container">
     <div class="home-carousel">
-      <carousel :images="topCarouselList" dots-position="right"></carousel>
+      <carousel :images="topCarouselList" dots-position="bottom"></carousel>
     </div>
 <!--  五位一体标题  -->
     <div class="five-one-title">
-      <span class="vice-title font-signature text-#CFC6C7 text-[10px]">FiveOneHealthSystem</span>
+      <span class="vice-title font-signature text-#CFC6C7 text-[10px]">Five-in-One health system</span>
       <span class="main-title text-#500404 text-2xl">五位一体健康体系</span>
     </div>
     <!-- 五位一体图片热点区域 -->
@@ -61,6 +61,45 @@
         <span class="vice-title font-signature text-#CFC6C7 text-[10px]">Brand Introduction of Lanxin Club</span>
         <span class="main-title text-#500404 text-2xl">澜心社品牌</span>
       </div>
+      <div class="brand_desc w-full mt-5">
+        <img src="/home/brand_desc.png" alt="澜心社品牌" class="w-full"/>
+      </div>
+      <div class="core_team w-full mt-5 bg-#EFE8E2 flex flex-row flex-nowrap rounded-[8px] pos-relative text-[clamp(12px,4vw,48px)]">
+        <img src="/home/core_team.png"  alt="核心团队" class="w-full h-auto"/>
+        <!-- 使用 transform 精确定位 -->
+        <div class="text-#B79780 pos-absolute left-[60%] top-[20%] -translate-x-1/2 font-bold whitespace-nowrap">
+          CORE TEAM
+        </div>
+        <div class="text-#510505 pos-absolute left-[60%] top-[36%] -translate-x-1/2 font-bold whitespace-nowrap">
+          核心团队
+        </div>
+        <div class="text-#B79780 pos-absolute left-[60%] top-[56%] -translate-x-1/2 whitespace-nowrap">
+          专注女性身心健康服务
+        </div>
+        <div class="text-#B79780 pos-absolute left-[60%] top-[66%] -translate-x-1/2 whitespace-nowrap">
+          专业化多维团队
+        </div>
+      </div>
+      <div class="brand_affect bg-#B79780 rounded-[8px] mt-5 p4 w-full flex flex-col items-center text-[clamp(12px,4vw,48px)]">
+        <div class="text-[#fff] mt-[10px]">BRAND INFLUENCE</div>
+        <div class="text-[#fff]">品牌影响力</div>
+        <img src="/home/brand_affect.png" alt="品牌影响力" class="w-full h-auto mt-[20px] mb-[10px]"/>
+      </div>
+      <div class="win_win mt-5 bg-#EFE8E2 flex flex-row items-center">
+        <img src="/home/win_win.png" alt="合作共赢" class="w-[36%] pt-2 pb-2 pl-2"/>
+        <div class="text-#B79780 h-[40%] ml-[14%] text-[clamp(12px,4vw,48px)]">
+          <div>WIN-WIN BRAND</div>
+          <div>COOPERATION</div>
+          <div class="text-#510505 font-bold">品牌合作共赢</div>
+        </div>
+      </div>
+      <div class="public_benefit bg-#B79780 mt-5 rounded-[8px] flex flex-col flex-nowrap items-center p-4">
+        <div class="h-[1%] text-[#fff]">
+          <div>PUBLIC WELFARE CONCEPT</div>
+          <div class="text-center font-bold">澜心社公益</div>
+        </div>
+        <img src="/home/public_benefit.png" alt="澜心社公益" class="mt-5"/>
+      </div>
     </div>
     <div class="home-offline-store">123</div>
     <div class="home-address">123</div>
@@ -69,7 +108,10 @@
 </template>
 <script setup lang="ts">
 const topCarouselList = ref(
-    ['/home/carousel/top_carousel_1.jpg']
+    [
+        '/home/carousel/top_carousel_1.jpg',
+        '/home/carousel/top_carousel_1.jpg',
+    ]
 )
 const handleHotspotClick = (area: string) => {
   console.log(' 点击热点区域:', area)
@@ -99,7 +141,7 @@ const handleHotspotClick = (area: string) => {
   }
 }
 </script>
-<style scoped >
+<style scoped lang="scss">
 .five-one-title{
   margin-top: 40px;
   display: flex;
@@ -107,6 +149,8 @@ const handleHotspotClick = (area: string) => {
   align-items: center;
 }
 .home-five-one {
+  padding-left: 40px;
+  padding-right: 40px;
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
@@ -139,32 +183,32 @@ const handleHotspotClick = (area: string) => {
 
 /* 顶部居中热点 */
 .top-center {
-  top: 8%;
+  top: 4%;
   left: 50%;
   transform: translateX(-50%);
-  width: 30%;
-  height: 20%;
+  width: 26%;
+  height: 28%;
 }
 
 /* 垂直居中热点组 */
 .vertical-center {
   position: absolute;
   top: 44%;
-  left: 0;
-  right: 0;
+  left: 10%;
+  right: 10%;
   transform: translateY(-50%);
   display: flex;
   justify-content: space-between;
-  height: 20%;
+  height: 30%;
 
   .left-half {
-    width: 48%;
+    width: 32%;
     height: 100%;
     left: 0;
   }
 
   .right-half {
-    width: 48%;
+    width: 32%;
     height: 100%;
     right: 0;
   }
@@ -173,21 +217,21 @@ const handleHotspotClick = (area: string) => {
 /* 底部热点组 */
 .bottom-group {
   position: absolute;
-  bottom: 10%;
-  left: 0;
-  right: 0;
+  bottom: 4%;
+  left: 20%;
+  right: 20%;
   display: flex;
   justify-content: space-between;
-  height: 20%;
+  height: 30%;
 
   .left-half {
-    width: 48%;
+    width: 44%;
     height: 100%;
     left: 0;
   }
 
   .right-half {
-    width: 48%;
+    width: 44%;
     height: 100%;
     right: 0;
   }
@@ -200,6 +244,9 @@ const handleHotspotClick = (area: string) => {
   }
 }
 .home-content{
+  margin-top: 80px;
+  padding-left: 20px;
+  padding-right: 20px;
   .home-content-title{
     margin-top: 40px;
     display: flex;
