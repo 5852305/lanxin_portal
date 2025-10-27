@@ -106,8 +106,9 @@ const handleHotspotClick = (area: string) => {
 /* 热点通用样式 */
 .img-hotspot {
   position: absolute;
-  background-color: rgba(255, 255, 255, 0.3);
-  border: 2px dashed rgba(0, 0, 255, 0.5);
+  //test code
+  //background-color: rgba(255, 255, 255, 0.3);
+  //border: 2px dashed rgba(0, 0, 255, 0.5);
   cursor: pointer;
   transition: all 0.3s;
 
@@ -142,8 +143,8 @@ const handleHotspotClick = (area: string) => {
 .vertical-center {
   position: absolute;
   top: 44%;
-  left: 10%;
-  right: 10%;
+  left: 4%;
+  right: 4%;
   transform: translateY(-50%);
   display: flex;
   justify-content: space-between;
@@ -166,8 +167,8 @@ const handleHotspotClick = (area: string) => {
 .bottom-group {
   position: absolute;
   bottom: 4%;
-  left: 20%;
-  right: 20%;
+  left: 16%;
+  right: 16%;
   display: flex;
   justify-content: space-between;
   height: 30%;
@@ -185,10 +186,10 @@ const handleHotspotClick = (area: string) => {
   }
 }
 
-/* 开发时显示热点，生产环境可移除 */
+/* 开发时显示热点，生产环境可移除
 .img-hotspot {
   &:hover {
     background-color: rgba(0, 255, 0, 0.2);
   }
-}
+}*/
 </style>

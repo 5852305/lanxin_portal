@@ -2,16 +2,38 @@
 import { defineNuxtConfig } from 'nuxt/config'
 
 export default defineNuxtConfig({
+  modules: [
+    '@unocss/nuxt',
+    '@nuxtjs/device',
+    '@vueuse/nuxt',
+    '@pinia/nuxt',
+    '@nuxtjs/color-mode',
+    '@nuxtjs/sitemap',
+    '@nuxtjs/robots',
+    '@nuxt/image',
+  ],
+  // 解决CommonJS冲突
+  build: {
+    transpile: [
+      'vueuc', // Naive UI的依赖
+      'date-fns',
+      'vue3-clipboard',
+    ]
+  },
   vite: {
     // 启用现代构建模式
     build: {
       target: 'esnext',
     },
-  },
-  typescript: {
-    // 强化类型检查
-    strict: true,
-    typeCheck: true
+    optimizeDeps: {
+      include: [
+        'vueuc',
+        'date-fns-tz',
+        'lodash-es'
+      ]
+    },
+    plugins: [
+    ]
   },
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
@@ -37,16 +59,6 @@ export default defineNuxtConfig({
   },
   plugins: [
   ],
-  modules: [
-    '@nuxtjs/device',
-    '@unocss/nuxt',
-    // '@vueuse/nuxt',
-    // '@pinia/nuxt',
-    '@nuxtjs/color-mode',
-    '@nuxtjs/sitemap',
-    '@nuxtjs/robots',
-    '@nuxt/image',
-  ],
   // UnoCSS 配置
   unocss: {
     configFile: 'uno.config.ts'
@@ -55,7 +67,7 @@ export default defineNuxtConfig({
   site: {
     url: 'https://your-domain.com',
     name: 'Lanxin Portal',
-    description: '兰新门户网站 - 提供全面的信息服务',
+    description: '门户网站 - 提供全面的信息服务',
     defaultLocale: 'zh-CN',
     // 可选：URL结尾斜杠配置
     trailingSlash: true,

@@ -4,10 +4,10 @@
       <span class="vice-title font-signature text-#CFC6C7 text-[10px]">Brand Introduction of Lanxin Club</span>
       <span class="main-title text-#500404 text-2xl">澜心社品牌</span>
     </div>
-    <div class="brand-item brand_desc w-full mt-5">
+    <div class="brand-item brand_desc w-full mt-5" @click.stop="toBrandDesc">
       <img src="/home/brand_desc.png" alt="澜心社品牌" class="w-full"/>
     </div>
-    <div class="brand-item core_team w-full mt-5 bg-#EFE8E2 flex flex-row flex-nowrap rounded-[8px] pos-relative text-[clamp(12px,4vw,48px)]">
+    <div @click.stop="toCoreTeam" class="brand-item core_team w-full mt-5 bg-#EFE8E2 flex flex-row flex-nowrap rounded-[8px] pos-relative text-[clamp(12px,4vw,48px)]">
       <img src="/home/core_team.png"  alt="核心团队" class="w-full h-auto"/>
       <!-- 使用 transform 精确定位 -->
       <div class="text-#B79780 pos-absolute left-[60%] top-[20%] -translate-x-1/2 font-bold whitespace-nowrap">
@@ -23,12 +23,12 @@
         专业化多维团队
       </div>
     </div>
-    <div class="brand-item brand_affect bg-#B79780 rounded-[8px] mt-5 p4 w-full flex flex-col items-center text-[clamp(12px,4vw,48px)]">
+    <div @click.stop="toBrandAffect" class="brand-item brand_affect bg-#B79780 rounded-[8px] mt-5 p4 w-full flex flex-col items-center text-[clamp(12px,4vw,48px)]">
       <div class="text-[#fff] mt-[2px]">BRAND INFLUENCE</div>
       <div class="text-[#fff]">品牌影响力</div>
       <img src="/home/brand_affect.png" alt="品牌影响力" class="w-full h-auto mt-[10px] mb-[4px]"/>
     </div>
-    <div class="brand-item win_win mt-5 bg-#EFE8E2 flex flex-row items-center">
+    <div @click.stop="toWinWin" class="brand-item win_win mt-5 bg-#EFE8E2 flex flex-row items-center">
       <img src="/home/win_win.png" alt="合作共赢" class="w-[36%] pt-2 pb-2 pl-2"/>
       <div class="text-#B79780 h-[40%] ml-[14%] text-[clamp(12px,4vw,48px)]">
         <div>WIN-WIN BRAND</div>
@@ -36,7 +36,7 @@
         <div class="text-#510505 font-bold">品牌合作共赢</div>
       </div>
     </div>
-    <div class="brand-item public_benefit bg-#B79780 mt-5 rounded-[8px] flex flex-col flex-nowrap items-center p-4">
+    <div @click.stop="toPublicBenefit" class="brand-item public_benefit bg-#B79780 mt-5 rounded-[8px] flex flex-col flex-nowrap items-center p-4">
       <div class="h-[1%] text-[#fff]">
         <div>PUBLIC WELFARE CONCEPT</div>
         <div class="text-center font-bold">澜心社公益</div>
@@ -47,7 +47,23 @@
 </template>
 
 <script setup lang="ts">
+const router = useRouter();
 
+const toPublicBenefit = () => {
+  router.push("/public-benefit");
+}
+const toWinWin = () => {
+  router.push("/win-win");
+}
+const toBrandAffect = () => {
+  router.push("/brand-affect");
+}
+const toCoreTeam = () => {
+  router.push("/core-steam");
+}
+const toBrandDesc = () => {
+  router.push("/brand-desc");
+}
 </script>
 
 <style scoped lang="scss">

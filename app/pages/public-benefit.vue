@@ -1,7 +1,7 @@
-<!--品牌简介-->
+<!--公益-->
 <template>
-  <div class="brand-desc-container w-full h-full">
-    品牌简介
+  <div>
+公益
   </div>
 </template>
 

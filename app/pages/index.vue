@@ -19,7 +19,6 @@ const topCarouselList = ref(
         '/home/carousel/top_carousel_1.jpg',
     ]
 )
-
 </script>
 <style scoped lang="scss">
 

@@ -4,10 +4,14 @@
   "compilerOptions": {
     "types": [
       // ...其他类型
-      "./types/unocss"
-    ]
+      "./types/unocss",
+    ],
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "skipLibCheck": true
   },
   "files": [],
+  "exclude": ["node_modules"],
 //  "references": [
 //    {
 //      "path": "./.nuxt/tsconfig.app.json"
