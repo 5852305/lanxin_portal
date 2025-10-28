@@ -5,8 +5,8 @@
 
 <script setup lang="ts">
 const imgList = ref([
-  {src:"/five-one/mental/mental1.png", alt:"青春期儿童性教育"},
-  {src:"/five-one/mental/mental2.png", alt:"智慧父母·放飞青春"},
+  {src:"/five-one/mental/mental1.png", alt:"青春期儿童性教育",to:"/five-one/detail/mental-child-education"},
+  {src:"/five-one/mental/mental2.png", alt:"智慧父母·放飞青春",to:"/five-one/detail/mental-parent"},
 ])
 </script>
 

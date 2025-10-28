@@ -9,6 +9,9 @@
 </template>
 
 <script setup lang="ts">
+const { $message } = useNuxtApp();
+import { useMessage } from '~/composables/useMessage';
+const message = useMessage();
 const router = useRouter()
 const props = withDefaults(defineProps<{
   mainTitle?: string
@@ -25,7 +28,17 @@ const props = withDefaults(defineProps<{
 })
 
 const toPage = (to: string) => {
-  router.push(to)
+  // console.log(message,$message,"==============")
+  //   message.info('This  is a111n info message');
+  // $message.info('This  is an info message');
+  // const { getMessages } = useMessage();
+  // console.log('Messages:',  getMessages());
+  // if (!to){
+  //   message.info('This  is an info message');
+  // }
+  if (to){
+    router.push(to)
+  }
 }
 </script>
 

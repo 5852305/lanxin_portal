@@ -1,7 +1,7 @@
+<!--品牌合作-->
 <template>
   <div class="brand-desc-container w-full h-full">
-    <!--品牌合作-->
-    品牌合作
+    <img src="/home/page/win_win.jpg"/>
   </div>
 </template>
 

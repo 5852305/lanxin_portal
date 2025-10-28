@@ -33,6 +33,7 @@ export default defineNuxtConfig({
       ]
     },
     plugins: [
+      '~/plugins/message.client.ts'
     ]
   },
   compatibilityDate: '2025-07-15',

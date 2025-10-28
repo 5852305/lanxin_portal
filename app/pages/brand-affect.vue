@@ -1,7 +1,7 @@
+<!--品牌影响力-->
 <template>
   <div class="brand-desc-container w-full h-full">
-<!--品牌影响力-->
-    品牌影响力
+    <img src="/home/page/brand_affect.jpg"/>
   </div>
 </template>
 

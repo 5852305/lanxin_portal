@@ -1,7 +1,7 @@
+<!--核心团队-->
 <template>
   <div class="core-steam-container w-full h-full">
-<!--核心团队-->
-    核心团队
+    <img src="/home/page/core_steam.jpg"/>
   </div>
 </template>
 

@@ -12,7 +12,6 @@
     "lint": "eslint . && tsc --noEmit"
   },
   "dependencies": {
-    "@css-render/vue3-ssr": "^0.15.14",
     "@nuxt/image": "1.11.0",
     "@nuxt/ui": "^4.1.0",
     "@nuxtjs/device": "^3.2.4",

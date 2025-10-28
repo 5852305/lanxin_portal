@@ -1,7 +1,7 @@
 <!--品牌简介-->
 <template>
   <div class="brand-desc-container w-full h-full">
-    品牌简介
+    <img src="/home/page/brand_desc.jpg"/>
   </div>
 </template>
 

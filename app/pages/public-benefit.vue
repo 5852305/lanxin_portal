@@ -1,7 +1,7 @@
 <!--公益-->
 <template>
-  <div>
-公益
+  <div class="core-steam-container w-full h-full">
+    <img src="/home/page/public-benefit.jpg"/>
   </div>
 </template>
 
