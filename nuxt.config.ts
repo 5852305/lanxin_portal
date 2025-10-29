@@ -1,17 +1,19 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { defineNuxtConfig } from 'nuxt/config'
+import AutoImport from 'unplugin-auto-import/vite'
+import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
+import Components from 'unplugin-vue-components/vite'
 
 export default defineNuxtConfig({
   modules: [
-    '@unocss/nuxt',
     '@nuxtjs/device',
     '@vueuse/nuxt',
     '@pinia/nuxt',
-    '@nuxtjs/color-mode',
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
     '@nuxt/image',
-    'nuxtjs-naive-ui'
+    'nuxtjs-naive-ui',
+    '@unocss/nuxt',
   ],
   // 解决CommonJS冲突
   build: {
@@ -19,6 +21,7 @@ export default defineNuxtConfig({
       'vueuc', // Naive UI的依赖
       'date-fns',
       'vue3-clipboard',
+      'naive-ui',
     ]
   },
   vite: {
@@ -29,11 +32,27 @@ export default defineNuxtConfig({
     optimizeDeps: {
       include: [
         'vueuc',
+        'naive-ui',
         'date-fns-tz',
         'lodash-es'
       ]
     },
     plugins: [
+      AutoImport({
+        imports: [
+          {
+            'naive-ui': [
+              'useDialog',
+              'useMessage',
+              'useNotification',
+              'useLoadingBar'
+            ]
+          }
+        ]
+      }),
+      Components({
+        resolvers: [NaiveUiResolver()]
+      })
     ]
   },
   compatibilityDate: '2025-07-15',
@@ -62,7 +81,7 @@ export default defineNuxtConfig({
   ],
   // UnoCSS 配置
   unocss: {
-    configFile: 'uno.config.ts'
+    configFile: '~/uno.config.ts'
   },
   // SEO 相关配置
   site: {

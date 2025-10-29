@@ -10,6 +10,7 @@
 
 <script setup lang="ts">
 const router = useRouter()
+const message = useMessage()
 const props = withDefaults(defineProps<{
   mainTitle?: string
   subTitle?: string
@@ -27,6 +28,8 @@ const props = withDefaults(defineProps<{
 const toPage = (to: string) => {
   if (to){
     router.push(to)
+  }else{
+    message.info('敬请期待')
   }
 }
 </script>

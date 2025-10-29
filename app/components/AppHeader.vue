@@ -15,7 +15,7 @@
         {{currentMenu?.name}}
       </span>
       <!-- 移动端汉堡按钮 -->
-      <button class="md:hidden text-1xl focus:outline-none" @click="toggleMenu">
+      <button class="md:hidden text-2xl focus:outline-none" @click="toggleMenu">
         ☰
       </button>
     </div>
