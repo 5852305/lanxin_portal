@@ -3,8 +3,6 @@
   "extends": "./.nuxt/tsconfig.json",   // 关键：继承 Nuxt 的别名和类型
   "compilerOptions": {
     "types": [
-      "./types/index.d.ts",
-      "./types/unocss",
     ],
     "resolveJsonModule": true,
     "isolatedModules": true,

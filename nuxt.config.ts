@@ -11,6 +11,7 @@ export default defineNuxtConfig({
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
     '@nuxt/image',
+    'nuxtjs-naive-ui'
   ],
   // 解决CommonJS冲突
   build: {
@@ -33,7 +34,6 @@ export default defineNuxtConfig({
       ]
     },
     plugins: [
-      '~/plugins/message.client.ts'
     ]
   },
   compatibilityDate: '2025-07-15',
