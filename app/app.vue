@@ -1,20 +1,21 @@
 <template>
   <!-- 包裹所有页面内容 -->
-  <n-message-provider>
-    <n-notification-provider> <!-- 如需useNotification，需同时添加 -->
-      <NuxtLayout :if-show-footer="false">
-        <NuxtRouteAnnouncer />
-        <NuxtPage class="font-jiangcheng"/>
-        <template v-slot:header>
-          <AppHeader class="font-jiangcheng"/>
-        </template>
-      </NuxtLayout>
-    </n-notification-provider>
-  </n-message-provider>
+  <n-config-provider preflight-style-disabled>
+    <n-message-provider>
+      <n-notification-provider> <!-- 如需useNotification，需同时添加 -->
+        <NuxtLayout :if-show-footer="false">
+          <NuxtRouteAnnouncer />
+          <NuxtPage class="font-jiangcheng"/>
+          <template v-slot:header>
+            <AppHeader class="font-jiangcheng"/>
+          </template>
+        </NuxtLayout>
+      </n-notification-provider>
+    </n-message-provider>
+  </n-config-provider>
 
 </template>
 <script setup lang="ts">
-import '@unocss/reset/tailwind.css'
 console.log(' 别名 ~ 指向:', import.meta.url)  // 应输出项目根目录下的路径
 
 // const { isMobile, isIos, isDesktop } = useDevice()

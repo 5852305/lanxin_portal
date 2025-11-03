@@ -78,11 +78,8 @@ export default defineNuxtConfig({
     }
   },
   plugins: [
+    { src: '~/plugins/naive-ui-meta.client.ts',  mode: 'client' }
   ],
-  // UnoCSS 配置
-  unocss: {
-    configFile: '~/uno.config.ts'
-  },
   // SEO 相关配置
   site: {
     url: 'https://your-domain.com',
@@ -98,7 +95,13 @@ export default defineNuxtConfig({
     xsl: false,                   // 禁用XSL样式表
     credits: false                // 隐藏模块版权信息
   },
-
+  css: [
+    '@unocss/reset/tailwind.css',
+  ],
+  // UnoCSS 配置
+  unocss: {
+    configFile: '~/uno.config.ts',
+  },
   // 响应式断点配置
   app: {
     head: {
@@ -107,10 +110,10 @@ export default defineNuxtConfig({
       meta: [
         { name: 'mobile-web-app-capable', content: 'yes' },
         { name: 'apple-mobile-web-app-capable', content: 'yes' },
-        { name: 'format-detection', content: 'telephone=no' }
+        { name: 'format-detection', content: 'telephone=no' },
       ],
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'  }
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'  },
       ]
     }
   },

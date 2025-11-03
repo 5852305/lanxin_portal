@@ -24,10 +24,11 @@
     </main>
 
     <!-- Footer -->
-    <footer v-if="ifShowFooter">
+    <footer>
       <slot name="footer">
-        <div class="container mx-auto text-center">
-          © 2023 My App
+        <div class="container mx-auto text-center text-#9E9E9EFF pb-4 pt-4">
+          <nuxt-link to="https://beian.miit.gov.cn/" target="_blank">
+          ICP备案/许可证号：蜀ICP备2025125407号</nuxt-link>
         </div>
       </slot>
     </footer>
