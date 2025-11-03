@@ -18,7 +18,7 @@
           class="img-hotspot top-center"
           @click="handleHotspotClick('top-center')"
       >
-        <div class="hotspot-label">顶部功能区</div>
+        <div class="hotspot-label" v-show="false">顶部功能区</div>
       </div>
 
       <!-- 垂直居中左右分区 -->
@@ -27,13 +27,13 @@
             class="img-hotspot left-half"
             @click="handleHotspotClick('vertical-left')"
         >
-          <div class="hotspot-label">左侧功能区</div>
+          <div class="hotspot-label" v-show="false">左侧功能区</div>
         </div>
         <div
             class="img-hotspot right-half"
             @click="handleHotspotClick('vertical-right')"
         >
-          <div class="hotspot-label">右侧功能区</div>
+          <div class="hotspot-label" v-show="false">右侧功能区</div>
         </div>
       </div>
 
@@ -43,13 +43,13 @@
             class="img-hotspot left-half"
             @click="handleHotspotClick('bottom-left')"
         >
-          <div class="hotspot-label">左下功能区</div>
+          <div class="hotspot-label" v-show="false">左下功能区</div>
         </div>
         <div
             class="img-hotspot right-half"
             @click="handleHotspotClick('bottom-right')"
         >
-          <div class="hotspot-label">右下功能区</div>
+          <div class="hotspot-label" v-show="false">右下功能区</div>
         </div>
       </div>
     </div>
