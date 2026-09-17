@@ -24,11 +24,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # 2. 安装 pnpm（与 lockfile 保持一致使用 v8 版本）
+      # 2. 安装 pnpm（自动适配 package.json 中声明的 pnpm@8.14.0）
       - name: 安装 pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: 8
           run_install: false
 
       # 3. 配置 Node.js 环境并启用 pnpm 缓存
