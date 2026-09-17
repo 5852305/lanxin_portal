@@ -45,9 +45,11 @@ jobs:
       - name: 打包 🔧
         run: pnpm run build
 
-      # 6. 打包构建产物（将根目录 .output 下的内容打进压缩包）
+      # 6. 打包构建产物（将根目录 .output 下的内容及编排配置打进压缩包）
       - name: 打包压缩包 🔧
-        run: tar -zcvf nuxt.tar.gz -C .output .
+        run: |
+          cp docker-compose.yml .output/ 2>/dev/null || true
+          tar -zcvf nuxt.tar.gz -C .output .
 
       # 7. 上传压缩包至服务器
       - name: 上传压缩包至服务器
@@ -72,6 +74,68 @@ jobs:
             cd ${{ secrets.SERVER_DESTINATION }}
             tar -zxvf nuxt.tar.gz -C ./
             rm -f nuxt.tar.gz
-            docker compose -f ${{ secrets.DOCKER_FILE }} down
-            docker compose -f ${{ secrets.DOCKER_FILE }} up -d
+
+            # 1. 检测 Docker 基础环境（未安装则自动安装并启动）
+            if ! command -v docker >/dev/null 2>&1; then
+              echo "==> 未检测到 Docker 环境，正在自动安装 Docker..."
+              curl -fsSL https://get.docker.com | sh
+              systemctl enable --now docker || service docker start || true
+            fi
+
+            # 2. 确保 Docker 守护进程处于运行状态
+            if ! docker info >/dev/null 2>&1; then
+              echo "==> Docker 服务未运行，正在启动 Docker..."
+              systemctl start docker || service docker start || true
+            fi
+
+            # 3. 确定 Docker Compose 命令（兼容 Compose V2 插件与独立版本）
+            DOCKER_COMPOSE="docker compose"
+            if ! docker compose version >/dev/null 2>&1; then
+              if command -v docker-compose >/dev/null 2>&1; then
+                DOCKER_COMPOSE="docker-compose"
+              else
+                echo "==> 未检测到 Docker Compose，尝试安装 compose 插件..."
+                (which apt-get >/dev/null 2>&1 && apt-get update && apt-get install -y docker-compose-plugin) || \
+                (which yum >/dev/null 2>&1 && yum install -y docker-compose-plugin) || true
+                if docker compose version >/dev/null 2>&1; then
+                  DOCKER_COMPOSE="docker compose"
+                fi
+              fi
+            fi
+
+            # 4. 检测并配置运行环境（docker-compose.yml）
+            DOCKER_FILE="${{ secrets.DOCKER_FILE }}"
+            if [ -z "$DOCKER_FILE" ]; then
+              DOCKER_FILE="docker-compose.yml"
+            fi
+
+            if [ ! -f "$DOCKER_FILE" ]; then
+              echo "==> 未检测到运行配置文件 $DOCKER_FILE，正在自动创建默认运行环境..."
+              cat > "$DOCKER_FILE" << 'EOF'
+            services:
+              lanxin-portal:
+                image: node:22-alpine
+                container_name: lanxin-portal
+                restart: always
+                working_dir: /app
+                volumes:
+                  - ./:/app
+                ports:
+                  - "3000:3000"
+                environment:
+                  - NODE_ENV=production
+                  - PORT=3000
+                  - HOST=0.0.0.0
+                command: node server/index.mjs
+            EOF
+            fi
+
+            # 5. 重启 Docker 服务（容错停止旧服务，启动新环境）
+            echo "==> 正在重启 Docker 服务..."
+            $DOCKER_COMPOSE -f "$DOCKER_FILE" down || true
+            $DOCKER_COMPOSE -f "$DOCKER_FILE" up -d
+
+            # 6. 验证容器运行状态
+            echo "==> 检查容器运行状态："
+            $DOCKER_COMPOSE -f "$DOCKER_FILE" ps
 

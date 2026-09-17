@@ -45,7 +45,6 @@
     "@unocss/transformer-directives": "^66.5.4",
     "@unocss/transformer-variant-group": "^66.5.4",
     "naive-ui": "^2.43.1",
-    "npm-audit": "^0.0.3",
     "sass": "^1.93.2",
     "typescript": "^5.9.3",
     "unocss": "^66.5.4",

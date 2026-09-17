@@ -1,0 +1,15 @@
+services:
+  lanxin-portal:
+    image: node:22-alpine
+    container_name: lanxin-portal
+    restart: always
+    working_dir: /app
+    volumes:
+      - ./:/app
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - HOST=0.0.0.0
+    command: node server/index.mjs
